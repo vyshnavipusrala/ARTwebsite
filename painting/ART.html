@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ART Online Purchase</title>
+    <link rel="icon" type="image/x-icon" href="C:\Users\hp\Desktop\D.jpeg">
+    <style>
+        body {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/000/625/844/original/geometric-abstract-light-blue-background-for-website-wallpapers-bussines-templates-vector.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        h1, h2 {
+            color: rgb(68, 0, 255);
+            font-style: Algerian;
+            text-align: center;
+        }
+
+        img {
+            max-width: 48%; /* Adjust this percentage based on your preference */
+            height: auto;
+            display: inline-block;
+            margin: 10px;
+            position: relative; /* Added position relative for .art-item positioning */
+        }
+
+        .art-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .art-item {
+            position: relative;
+            margin: 10px;
+        }
+
+        .price {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+            visibility: hidden;
+            transition: visibility 0.3s ease-in-out;
+        }
+
+        .art-item:hover .price {
+            visibility: visible;
+        }
+
+        p {
+            font-size: larger;
+            font-style: oblique;
+            text-align: center;
+            margin: 10px;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        form.contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        @media screen and (max-width: 600px) {
+            nav a {
+                float: none;
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#painting-section">Painting</a>
+        <a href="#mandala-section">Mandala Art</a>
+        <a href="#customer-reviews-section">Customer Reviews</a>
+        <a href="#contact-section">Register for order</a>
+    </nav>
+
+    <section id="painting-section">
+        <h1>Painting</h1>
+        <div class="art-container">
+            <div class="art-item">
+                <img src="p1.jpeg" alt="Painting 1">
+                <p class="price">1000</p>
+            </div>
+            <div class="art-item">
+                <img src="p2.jpeg" alt="Painting 2">
+                <p class="price">850</p>
+            </div>
+            <div class="art-item">
+                <img src="p3.jpeg" alt="Painting 2">
+                <p class="price">850</p>
+            </div>
+            <div class="art-item">
+                <img src="p4.jpeg" alt="Painting 2">
+                <p class="price">850</p>
+            </div>
+            
+        </div>
+        <p>These are a few popular images sold out. To visit and purchase more, click the button below.</p>
+        <form>
+            <input type="button" style="color:red;" onclick="window.location.href='https://www.mojarto.com/';" value="Visit!"/>
+        </form>
+    </section>
+
+    <section id="mandala-section">
+        <h1>Mandala Art</h1>
+        <div class="art-container">
+            <div class="art-item">
+                <img src="m2.jpg" alt="Mandala 1">
+                <p class="price">1200</p>
+            </div>
+            <div class="art-item">
+                <img src="m1.jpg" alt="Mandala 2">
+                <p class="price">580</p>
+            </div>
+            <div class="art-item">
+                <img src="m3.jpg" alt="Mandala 2">
+                <p class="price">650</p>
+            </div>
+            <div class="art-item">
+                <img src="m4.jpg" alt="Mandala 2">
+                <p class="price">1000</p>
+            </div>
+        </div>
+        <p>Traditionally, Mandala art is circular in design. To know more, click on the link below.</p>
+        <form>
+            <input type="button" style="color:red;" onclick="window.location.href='https://www.etsy.com/in-en/market/mandala_art';" value="Visit!"/>
+        </form>
+    </section>
+    
+    <section id="customer-reviews-section">
+        <h2>Customer Reviews</h2>
+        <p>Read what our customers have to say about our art pieces.</p>
+        <div id="customer-reviews"></div>
+    </section>
+
+    <section id="FOR ORDERS">
+        <h2>REGISTER FOR ORDER</h2>
+        <p>If you have any questions or inquiries, feel free to reach out to us using the form below.</p>
+        <form class="contact-form" onsubmit="validateForm(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <script>
+        // Example reviews data
+        const reviewsData = [
+            { name: "John Doe", review: "Amazing artwork! Loved it." },
+            { name: "Jane Smith", review: "Great service and beautiful paintings." },
+            // Add more reviews as needed
+        ];
+
+        // Function to display reviews
+        function displayReviews() {
+            const reviewsContainer = document.getElementById('customer-reviews');
+
+            reviewsData.forEach(review => {
+                const reviewElement = document.createElement('div');
+                reviewElement.innerHTML = `<p><strong>${review.name}:</strong> ${review.review}</p>`;
+                reviewsContainer.appendChild(reviewElement);
+            });
+        }
+
+        // Call the function to display reviews
+        displayReviews();
+
+        // Form validation
+        function validateForm(event) {
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+
+            if (nameInput.value.trim() === '' || emailInput.value.trim() === '') {
+                alert('Name and email are required fields');
+                event.preventDefault(); // Prevent form submission
+            }
+        }
+    </script>
+
+</body>
+</html>
